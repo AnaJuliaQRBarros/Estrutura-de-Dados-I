@@ -12,3 +12,21 @@ Imprima o Dano: Mostre na tela a vida do jogador após o dano. A saída deve ser
 Conecte o Ponteiro: Faça com que o ponteiro_vida aponte para o endereço de memória da variável vida_jogador.
 Use o Power-up: Simule a coleta do item. (ponteiro_vida), restaure a vida do jogador para 100. (Dica: você precisará do operador de indireção *).
 Imprima a Restauração: Mostre na tela a vida do jogador após usar o "power-up". A saída deve ser: "Power-up coletado! Vida restaurada: 100"
+
+Solução:
+
+#include <stdio.h>
+
+int main()
+{
+    int vida_jogador = 100;
+    int *ponteiro_vida;
+
+    vida_jogador = 50;
+    printf("O jogador sofreu dano! Vida atual: %d\n", vida_jogador);
+    ponteiro_vida = &vida_jogador;
+    *ponteiro_vida = 100;
+    printf("Power-up coletado! Vida restaurada: %d\n", vida_jogador);
+    return 0;
+}
+
